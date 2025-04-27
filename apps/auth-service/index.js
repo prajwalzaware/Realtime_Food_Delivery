@@ -29,7 +29,6 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    await client.connect();
 
     app.use("/", router);
 

@@ -1,8 +1,7 @@
-import redis from 'redis';
+import Redis from "ioredis";
+import dotenv from "dotenv";
 
-const client = redis.createClient({
-  url: 'redis://127.0.0.1:6379' // Explicitly use IPv4
-});
+const client =  new Redis(process.env.REDIS_URL);
 
 client.on('connect', () => {
   console.log('Connected to Redis...');
